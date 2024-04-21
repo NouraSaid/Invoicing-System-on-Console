@@ -1,5 +1,4 @@
 package shopInfo;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -115,14 +114,15 @@ public class Main {
         }
 
         private static void handleCreateNewInvoice(Scanner scanner) {
-            private static void handleCreateNewInvoice(Scanner scanner) {
+            Scanner scanner1 = scanner;
+            public static void handleCreateNewInvoice ( Scanner scanner1) {
                 System.out.println("Creating New Invoice:");
 
                 System.out.print("Enter Customer Full Name: ");
-                String customerFullName = scanner.nextLine();
+                String customerFullName = scanner1.nextLine();
 
                 System.out.print("Enter Phone Number: ");
-                String phoneNumber = scanner.nextLine();
+                String phoneNumber = scanner1.nextLine();
 
                 // Get current date as invoice date
                 Date invoiceDate = new Date();
@@ -132,25 +132,25 @@ public class Main {
 
                 while (addMoreItems) {
                     System.out.print("Enter Item ID: ");
-                    String itemId = scanner.nextLine();
+                    String itemId = scanner1.nextLine();
 
                     System.out.print("Enter Item Name: ");
-                    String itemName = scanner.nextLine();
+                    String itemName = scanner1.nextLine();
 
                     System.out.print("Enter Unit Price: ");
-                    double unitPrice = scanner.nextDouble();
+                    double unitPrice = scanner1.nextDouble();
 
                     System.out.print("Enter Quantity: ");
-                    int quantity = scanner.nextInt();
+                    int quantity = scanner1.nextInt();
 
                     // Create new product
                     Product newItem = new Product(itemId, itemName, unitPrice, quantity);
                     items.add(newItem);
 
                     System.out.print("Add another item? (yes/no): ");
-                    String addAnotherItem = scanner.next();
+                    String addAnotherItem = scanner1.next();
                     addMoreItems = addAnotherItem.equalsIgnoreCase("yes");
-                    scanner.nextLine(); // Consume newline character after nextInt()
+                    scanner1.nextLine(); // Consume newline character after nextInt()
                 }
 
                 // Calculate total amount
@@ -173,7 +173,12 @@ public class Main {
             }
 
         private static void handleReportStatistics() {
-            // Implement report statistics functionality
+            // Report statistics
+            int totalItems = products.size();
+            int totalInvoices = invoices.size();
+            double totalSales = 0.0;
+            for (Invoice invoice : invoices) {
+                totalSales += invoice.getTotalAmount();
         }
 
         private static void handleReportAllInvoices() {
