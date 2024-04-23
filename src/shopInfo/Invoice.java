@@ -1,85 +1,93 @@
 package shopInfo;
-
 import java.util.Date;
 import java.util.List;
 
-   public class Invoice {
-        private String customerFullName;
-        private String phoneNumber;
-        private Date invoiceDate;
-        private List<Product> items;
-        private double totalAmount;
-        private double paidAmount;
-        private double balance;
+public class Invoice {
+    private int invoiceNumber;
+    private String customerFullName;
+    private String phoneNumber;
+    private Date invoiceDate;
+    private List<Product> items;
+    private double totalAmount;
+    private double paidAmount;
+    private double balance;
 
-        public Invoice(String customerFullName, String phoneNumber, Date invoiceDate, List<Product> items,
-                       double totalAmount, double paidAmount, double balance) {
-            this.customerFullName = customerFullName;
-            this.phoneNumber = phoneNumber;
-            this.invoiceDate = invoiceDate;
-            this.items = items;
-            this.totalAmount = totalAmount;
-            this.paidAmount = paidAmount;
-            this.balance = balance;
-        }
+    // Constructor
+    public Invoice(String customerFullName, String phoneNumber, Date invoiceDate, List<Product> items, double totalAmount, double paidAmount, double balance) {
+        this.invoiceNumber = invoiceNumber;
+        this.customerFullName = customerFullName;
+        this.phoneNumber = phoneNumber;
+        this.invoiceDate = invoiceDate;
+        this.items = items;
+        this.totalAmount = totalAmount;
+        this.paidAmount = paidAmount;
+        this.balance = balance;
+    }
 
-        // Getters and setters
+    public int getInvoiceNumber() {
+        return invoiceNumber;
+    }
 
-       public String getCustomerFullName() {
-           return customerFullName;
-       }
+    public void setInvoiceNumber(int invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
+    }
 
-       public void setCustomerFullName(String customerFullName) {
-           this.customerFullName = customerFullName;
-       }
+    public String getCustomerFullName() {
+        return customerFullName;
+    }
 
-       public String getPhoneNumber() {
-           return phoneNumber;
-       }
+    public void setCustomerFullName(String customerFullName) {
+        this.customerFullName = customerFullName;
+    }
 
-       public void setPhoneNumber(String phoneNumber) {
-           this.phoneNumber = phoneNumber;
-       }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-       public Date getInvoiceDate() {
-           return invoiceDate;
-       }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-       public void setInvoiceDate(Date invoiceDate) {
-           this.invoiceDate = invoiceDate;
-       }
+    public Date getInvoiceDate() {
+        return invoiceDate;
+    }
 
-       public List<Product> getItems() {
-           return items;
-       }
+    public void setInvoiceDate(Date invoiceDate) {
+        this.invoiceDate = invoiceDate;
+    }
 
-       public void setItems(List<Product> items) {
-           this.items = items;
-       }
+    public List<Product> getItems() {
+        return items;
+    }
 
-       public double getTotalAmount() {
-           return totalAmount;
-       }
+    public void setItems(List<Product> items) {
+        this.items = items;
+    }
 
-       public void setTotalAmount(double totalAmount) {
-           this.totalAmount = totalAmount;
-       }
+    public double getTotalAmount() {
+        return totalAmount;
+    }
 
-       public double getPaidAmount() {
-           return paidAmount;
-       }
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
 
-       public void setPaidAmount(double paidAmount) {
-           this.paidAmount = paidAmount;
-       }
+    public double getPaidAmount() {
+        return paidAmount;
+    }
 
-       public double getBalance() {
-           return balance;
-       }
+    public void setPaidAmount(double paidAmount) {
+        this.paidAmount = paidAmount;
+    }
 
-       public void setBalance(double balance) {
-           this.balance = balance;
-       }
-   }
+    public double getBalance() {
+        return balance;
+    }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    // Other methods as needed (e.g., toString() to print invoice details)
+}
 
