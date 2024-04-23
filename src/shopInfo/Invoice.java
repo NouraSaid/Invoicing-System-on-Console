@@ -1,4 +1,5 @@
 package shopInfo;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Invoice {
     private double balance;
 
     // Constructor
-    public Invoice(String customerFullName, String phoneNumber, Date invoiceDate, List<Product> items, double totalAmount, double paidAmount, double balance) {
+    public Invoice(int invoiceNumber, String customerFullName, String phoneNumber, Date invoiceDate, List<Product> items, double totalAmount, double paidAmount, double balance) {
         this.invoiceNumber = invoiceNumber;
         this.customerFullName = customerFullName;
         this.phoneNumber = phoneNumber;
@@ -88,6 +89,20 @@ public class Invoice {
         this.balance = balance;
     }
 
-    // Other methods as needed (e.g., toString() to print invoice details)
+    public void printInvoiceDetails() {
+        System.out.println(STR."Invoice Number: \{invoiceNumber}");
+        System.out.println(STR."Customer Name: \{customerFullName}");
+        System.out.println(STR."Phone Number: \{phoneNumber}");
+        System.out.println(STR."Invoice Date: \{invoiceDate}");
+        System.out.println("Items:");
+        for (Product item : items) {
+            System.out.println("\t- " + Product.itemName() + ": $" + item.getPrice());
+        }
+        System.out.println(STR."Total Amount: $\{totalAmount}");
+        for (String s : Arrays.asList(STR."Paid Amount: $\{paidAmount}", STR."Balance: $\{balance}")) {
+            System.out.println(s);
+        }
+    }
+// Other methods as needed (e.g., toString() to print invoice details)
 }
 
