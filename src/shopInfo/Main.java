@@ -1,21 +1,20 @@
 package shopInfo;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
-    // Main class
+public class InvoiceSystem {
 
-        private static List<Invoice> invoices = new ArrayList<>();
-        private static List<Product> products = new ArrayList<>();
+    public static List<Invoice> invoices = new ArrayList<>();
+    public static List<Product> products = new ArrayList<>();
+    private static Scanner scanner;
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             boolean exit = false;
 
             while (!exit) {
-                Menu.show();
+                extracted();
                 int choice = scanner.nextInt();
 
                 switch (choice) {
@@ -57,7 +56,11 @@ public class Main {
             }
         }
 
-        private static void handleShopSettings(Scanner scanner) {
+    private static void extracted() {
+        Menu.show();
+    }
+
+    private static void handleShopSettings(Scanner scanner) {
             System.out.println("Shop Settings Menu:");
             System.out.println("1. Load Data");
             System.out.println("2. Set Shop Name");
@@ -82,47 +85,18 @@ public class Main {
                     System.out.println("Invalid choice. Please choose a valid option.");
             }
         }
+        private static void  handleManageShopItems() {
 
-        private static void handleManageShopItems(Scanner scanner) {
-            System.out.println("Manage Shop Items Menu:");
-            System.out.println("1. Add Items");
-            System.out.println("2. Delete Items");
-            System.out.println("3. Change Item Price");
-            System.out.println("4. Report All Items");
-            System.out.println("5. Go Back");
-            System.out.println("Choose an option: ");
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    // Implement add items functionality
-                    break;
-                case 2:
-                    // Implement delete items functionality
-                    break;
-                case 3:
-                    // Implement change item price functionality
-                    break;
-                case 4:
-                    // Implement report all items functionality
-                    break;
-                case 5:
-                    // Go back to main menu
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please choose a valid option.");
-            }
         }
-
-        private static void handleCreateNewInvoice(Scanner scanner) {
-            Scanner scanner1 = scanner;
-            public static void handleCreateNewInvoice ( Scanner scanner1) {
+        private static void  handleCreateNewInvoice() {
+            private static void handleCreateNewInvoice(Scanner scanner) {
                 System.out.println("Creating New Invoice:");
 
                 System.out.print("Enter Customer Full Name: ");
-                String customerFullName = scanner1.nextLine();
+                String customerFullName = scanner.nextLine();
 
                 System.out.print("Enter Phone Number: ");
-                String phoneNumber = scanner1.nextLine();
+                String phoneNumber = scanner.nextLine();
 
                 // Get current date as invoice date
                 Date invoiceDate = new Date();
@@ -132,25 +106,25 @@ public class Main {
 
                 while (addMoreItems) {
                     System.out.print("Enter Item ID: ");
-                    String itemId = scanner1.nextLine();
+                    String itemId = scanner.nextLine();
 
                     System.out.print("Enter Item Name: ");
-                    String itemName = scanner1.nextLine();
+                    String itemName = scanner.nextLine();
 
                     System.out.print("Enter Unit Price: ");
-                    double unitPrice = scanner1.nextDouble();
+                    double unitPrice = scanner.nextDouble();
 
                     System.out.print("Enter Quantity: ");
-                    int quantity = scanner1.nextInt();
+                    int quantity = scanner.nextInt();
 
                     // Create new product
                     Product newItem = new Product(itemId, itemName, unitPrice, quantity);
                     items.add(newItem);
 
                     System.out.print("Add another item? (yes/no): ");
-                    String addAnotherItem = scanner1.next();
+                    String addAnotherItem = scanner.next();
                     addMoreItems = addAnotherItem.equalsIgnoreCase("yes");
-                    scanner1.nextLine(); // Consume newline character after nextInt()
+                    scanner.nextLine(); // Consume newline character after nextInt()
                 }
 
                 // Calculate total amount
@@ -170,27 +144,19 @@ public class Main {
                 System.out.println("Invoice created successfully!");
             }
 
-            }
-
-        private static void handleReportStatistics() {
-            // Report statistics
-            int totalItems = products.size();
-            int totalInvoices = invoices.size();
-            double totalSales = 0.0;
-            for (Invoice invoice : invoices) {
-                totalSales += invoice.getTotalAmount();
         }
-
         private static void handleReportAllInvoices() {
-            // Implement report all invoices functionality
+            shopSetting.reportAllInvoices();
         }
+        private static void  handleReportStatistics() {
+
+     }
 
         private static void handleSearchInvoices(Scanner scanner) {
-            // Implement search invoices functionality
-        }
-
-        private static void handleProgramStatistics() {
-            // Implement program statistics functionality
-        }
+        // Implement search invoices functionality
     }
 
+         private static void handleProgramStatistics() {
+        // Implement program statistics functionality
+    }
+}
