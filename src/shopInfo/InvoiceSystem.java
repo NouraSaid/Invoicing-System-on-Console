@@ -15,7 +15,8 @@ public class InvoiceSystem {
 
         while (!exit) {
             Menu.show();
-            int choice = scanner.nextInt();
+            int choice = Menu.getNumericOption(scanner);
+
 
             switch (choice) {
                 case 1:
@@ -56,7 +57,7 @@ public class InvoiceSystem {
         System.out.println("3. Set Invoice Header");
         System.out.println("4. Go Back");
         System.out.println("Choose an option: ");
-        int choice = scanner.nextInt();
+        int choice = Menu.getNumericOption(scanner);
         switch (choice) {
             case 1:
                 // Implement load data functionality
