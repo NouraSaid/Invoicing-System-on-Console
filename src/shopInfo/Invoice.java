@@ -1,10 +1,8 @@
 package shopInfo;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 public class Invoice {
-    private int invoiceNumber;
     private String customerFullName;
     private String phoneNumber;
     private Date invoiceDate;
@@ -13,9 +11,8 @@ public class Invoice {
     private double paidAmount;
     private double balance;
 
-    // Constructor
-    public Invoice(int invoiceNumber, String customerFullName, String phoneNumber, Date invoiceDate, List<Product> items, double totalAmount, double paidAmount, double balance) {
-        this.invoiceNumber = invoiceNumber;
+    public Invoice(String customerFullName, String phoneNumber, Date invoiceDate, List<Product> items,
+                   double totalAmount, double paidAmount, double balance) {
         this.customerFullName = customerFullName;
         this.phoneNumber = phoneNumber;
         this.invoiceDate = invoiceDate;
@@ -25,13 +22,7 @@ public class Invoice {
         this.balance = balance;
     }
 
-    public int getInvoiceNumber() {
-        return invoiceNumber;
-    }
-
-    public void setInvoiceNumber(int invoiceNumber) {
-        this.invoiceNumber = invoiceNumber;
-    }
+    // Getters and setters for all attributes
 
     public String getCustomerFullName() {
         return customerFullName;
@@ -89,20 +80,6 @@ public class Invoice {
         this.balance = balance;
     }
 
-    public void printInvoiceDetails() {
-        System.out.println(STR."Invoice Number: \{invoiceNumber}");
-        System.out.println(STR."Customer Name: \{customerFullName}");
-        System.out.println(STR."Phone Number: \{phoneNumber}");
-        System.out.println(STR."Invoice Date: \{invoiceDate}");
-        System.out.println("Items:");
-        for (Product item : items) {
-            System.out.println("\t- " + Product.itemName() + ": $" + item.getPrice());
-        }
-        System.out.println(STR."Total Amount: $\{totalAmount}");
-        for (String s : Arrays.asList(STR."Paid Amount: $\{paidAmount}", STR."Balance: $\{balance}")) {
-            System.out.println(s);
-        }
-    }
-// Other methods as needed (e.g., toString() to print invoice details)
+    // Other methods like toString() if needed
 }
 
