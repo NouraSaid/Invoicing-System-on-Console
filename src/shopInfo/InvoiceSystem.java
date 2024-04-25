@@ -23,7 +23,7 @@ public class InvoiceSystem {
                     handleShopSettings(scanner);
                     break;
                 case 2:
-                    handleManageShopItems();
+                    handleManageShopItems(scanner);
                     break;
                 case 3:
                     handleCreateNewInvoice(scanner);
@@ -76,8 +76,39 @@ public class InvoiceSystem {
         }
     }
 
-    private static void handleManageShopItems() {
-        // Implement manage shop items functionality
+    private static void handleManageShopItems(Scanner scanner) {
+        boolean exitManageItems = false;
+        while (!exitManageItems) {
+            System.out.println("\nManage Shop Items Menu:");
+            System.out.println("1. Add Items");
+            System.out.println("2. Delete Items");
+            System.out.println("3. Change Item Price");
+            System.out.println("4. Report All Items");
+            System.out.println("5. Go Back");
+            System.out.print("Choose an option: ");
+
+            int choice = Menu.getNumericOption(scanner);
+            switch (choice) {
+                case 1:
+                    // Implement functionality to add items
+                    break;
+                case 2:
+                    // Implement functionality to delete items
+                    break;
+                case 3:
+                    // Implement functionality to change item price
+                    break;
+                case 4:
+                    // Implement functionality to report all items
+                    break;
+                case 5:
+                    exitManageItems = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please choose a valid option.");
+                    break;
+            }
+        }
     }
 
     private static void handleCreateNewInvoice(Scanner scanner) {
