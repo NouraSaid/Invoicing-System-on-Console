@@ -35,4 +35,7 @@ public class ShopSetting {
     public Map<String, String> getInvoiceHeader() {
         return invoiceHeader;
     }
+
+    public void loadData() {
+    }
 }

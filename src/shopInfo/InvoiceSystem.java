@@ -62,7 +62,7 @@ public class InvoiceSystem {
         int choice = Menu.getNumericOption(scanner);
         switch (choice) {
             case 1:
-                // Implement load data functionalit1y11
+                shop.loadData();
                 break;
             case 2:
                 System.out.print("Enter new shop name: ");
@@ -70,7 +70,6 @@ public class InvoiceSystem {
                 System.out.println(STR."Shop name set to: \{newName}");
                 break;
             case 3:
-
                 shop.setInvoiceHeader();
                 break;
             case 4:
