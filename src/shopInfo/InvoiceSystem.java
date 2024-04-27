@@ -7,7 +7,9 @@ import java.util.Scanner;
 public class InvoiceSystem {
     public static List<Invoice> invoices = new ArrayList<>();
     public static List<Product> products = new ArrayList<>();
+    static ShopSetting shop=new ShopSetting("new shop");
     private static Scanner scanner;
+    private String invoiceHeader;
 
     public static void main(String[] args) {
         scanner = new Scanner(System.in);
@@ -60,22 +62,27 @@ public class InvoiceSystem {
         int choice = Menu.getNumericOption(scanner);
         switch (choice) {
             case 1:
-                // Implement load data functionality
+                // Implement load data functionalit1y11
                 break;
             case 2:
-                // Implement set shop name functionality
+                System.out.print("Enter new shop name: ");
+                String newName = scanner.nextLine();
+                System.out.println(STR."Shop name set to: \{newName}");
                 break;
             case 3:
-                // Implement set invoice header functionality
+
+                shop.setInvoiceHeader();
                 break;
             case 4:
-                // Go back to main menu
+                boolean backToMain = true;
                 break;
             default:
                 System.out.println("Invalid choice. Please choose a valid option.");
         }
     }
+    //*********** SHOP Settings Menu Functions ******************
 
+//****************************************************************************************************
     private static void handleManageShopItems(Scanner scanner) {
         boolean exitManageItems = false;
         while (!exitManageItems) {
