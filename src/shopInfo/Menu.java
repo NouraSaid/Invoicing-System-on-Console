@@ -32,7 +32,7 @@ public class Menu  {
         }
     }
 
-    private static boolean isInteger(String input) {
+    public static boolean isInteger(String input) {
         try {
             Integer.parseInt(input);
             return true;

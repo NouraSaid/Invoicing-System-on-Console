@@ -105,7 +105,7 @@ public class InvoiceSystem {
                     shop.changePrice();
                     break;
                 case 4:
-                    // Implement functionality to report all items
+                    shop.reportItems();
                     break;
                 case 5:
                     exitManageItems = true;

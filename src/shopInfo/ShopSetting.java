@@ -37,6 +37,25 @@ public class ShopSetting {
     }
 
     public void loadData() {
+        System.out.println("Loading initial data...");
+
+        // Example: Load initial invoice header information
+        invoiceHeader.put("Telephone", "123-456-7890");
+        invoiceHeader.put("Fax", "123-456-7891");
+        invoiceHeader.put("Email", "shop@example.com");
+        invoiceHeader.put("Website", "www.example.com");
+
+        // Example: Load initial products
+        Product product1 = new Product("1", "Product 1", 10.99, 100);
+        Product product2 = new Product("2", "Product 2", 20.49, 50);
+        Product product3 = new Product("3", "Product 3", 5.99, 200);
+
+        // Add the products to the shop's list of products
+        InvoiceSystem.products.add(product1);
+        InvoiceSystem.products.add(product2);
+        InvoiceSystem.products.add(product3);
+
+        System.out.println("Initial data loaded successfully.");
     }
 
     public void addItems()
@@ -105,6 +124,20 @@ public class ShopSetting {
 
         if (!itemFound) {
             System.out.println("Item not found.");
+        }
+    }
+
+    public void reportItems() {
+        System.out.println("Report All Items:");
+
+        if (InvoiceSystem.products.isEmpty()) {
+            System.out.println("No items available.");
+            return;
+        }
+
+        System.out.println("ID \t Name \t Unit Price \t Quantity");
+        for (Product product : InvoiceSystem.products) {
+            System.out.println(product.getItemId() + "\t" + product.getItemName() + "\t" + product.getUnitPrice() + "\t\t" + product.getQuantity());
         }
     }
 }
