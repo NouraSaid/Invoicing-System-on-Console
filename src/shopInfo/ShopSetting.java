@@ -65,5 +65,28 @@ public class ShopSetting {
     }
 
 
+    public void deleteItems() {
+    System.out.println("Delete Items:");
+
+    System.out.print("Enter Item ID or Name to delete: ");
+    String itemToDelete = scanner.nextLine();
+
+    boolean itemFound = false;
+    for (Product product : InvoiceSystem.products) {
+        if (product.getItemId().equalsIgnoreCase(itemToDelete) || product.getItemName().equalsIgnoreCase(itemToDelete)) {
+            InvoiceSystem.products.remove(product);
+            itemFound = true;
+            System.out.println("Item deleted successfully.");
+            break; // Exit loop after deleting the first occurrence
+        }
     }
+
+    if (!itemFound) {
+        System.out.println("Item not found.");
+    }
+}
+
+}
+
+
 
