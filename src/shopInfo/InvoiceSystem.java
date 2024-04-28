@@ -96,7 +96,7 @@ public class InvoiceSystem {
             int choice = Menu.getNumericOption(scanner);
             switch (choice) {
                 case 1:
-                    // Implement functionality to add items
+                    shop.addItems();
                     break;
                 case 2:
                     // Implement functionality to delete items
@@ -116,6 +116,8 @@ public class InvoiceSystem {
             }
         }
     }
+
+    //*********** Main Menu Functions ******************
 
     private static void handleCreateNewInvoice(Scanner scanner) {
         scanner.nextLine(); // Consume newline character

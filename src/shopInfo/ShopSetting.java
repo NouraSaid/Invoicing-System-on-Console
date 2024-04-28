@@ -38,4 +38,32 @@ public class ShopSetting {
 
     public void loadData() {
     }
-}
+
+    public void addItems()
+    {
+        System.out.println("Add Items:");
+
+        System.out.print("Enter Item ID: ");
+        String itemId = scanner.nextLine();
+
+        System.out.print("Enter Item Name: ");
+        String itemName = scanner.nextLine();
+
+        System.out.print("Enter Unit Price: ");
+        double unitPrice = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Enter Quantity: ");
+        int quantity = Integer.parseInt(scanner.nextLine());
+
+        // Create a new Product object
+        Product newProduct = new Product(itemId, itemName, unitPrice, quantity);
+
+        // Add the new product to the shop's list of products
+        InvoiceSystem.products.add(newProduct);
+
+        System.out.println("Item added successfully.");
+    }
+
+
+    }
+

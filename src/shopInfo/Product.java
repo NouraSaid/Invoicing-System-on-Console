@@ -1,10 +1,10 @@
 package shopInfo;
 
 public class Product {
-    private String itemId;
-    private String itemName;
-    private double unitPrice;
-    private int quantity;
+    public String itemId;
+    public String itemName;
+    public double unitPrice;
+    public int quantity;
 
     public Product(String itemId, String itemName, double unitPrice, int quantity) {
         this.itemId = itemId;

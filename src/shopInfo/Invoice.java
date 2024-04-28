@@ -3,13 +3,13 @@ import java.util.Date;
 import java.util.List;
 
 public class Invoice {
-    private String customerFullName;
-    private String phoneNumber;
-    private Date invoiceDate;
-    private List<Product> items;
-    private double totalAmount;
-    private double paidAmount;
-    private double balance;
+    public String customerFullName;
+    public String phoneNumber;
+    public Date invoiceDate;
+    public List<Product> items;
+    public double totalAmount;
+    public double paidAmount;
+    public double balance;
 
     public Invoice(String customerFullName, String phoneNumber, Date invoiceDate, List<Product> items,
                    double totalAmount, double paidAmount, double balance) {
