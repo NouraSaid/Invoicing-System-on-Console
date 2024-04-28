@@ -102,7 +102,7 @@ public class InvoiceSystem {
                     shop.deleteItems();
                     break;
                 case 3:
-                    // Implement functionality to change item price
+                    shop.changePrice();
                     break;
                 case 4:
                     // Implement functionality to report all items

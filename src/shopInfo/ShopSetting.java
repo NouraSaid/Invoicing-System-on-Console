@@ -85,7 +85,28 @@ public class ShopSetting {
         System.out.println("Item not found.");
     }
 }
+    public void changePrice() {
+        System.out.println("Change Item Price:");
 
+        System.out.print("Enter Item ID or Name: ");
+        String itemToChange = scanner.nextLine();
+
+        boolean itemFound = false;
+        for (Product product : InvoiceSystem.products) {
+            if (product.getItemId().equalsIgnoreCase(itemToChange) || product.getItemName().equalsIgnoreCase(itemToChange)) {
+                System.out.print("Enter new price for " + product.getItemName() + ": ");
+                double newPrice = Double.parseDouble(scanner.nextLine());
+                product.setUnitPrice(newPrice);
+                itemFound = true;
+                System.out.println("Price updated successfully.");
+                break; // Exit loop after updating the first occurrence
+            }
+        }
+
+        if (!itemFound) {
+            System.out.println("Item not found.");
+        }
+    }
 }
 
 
