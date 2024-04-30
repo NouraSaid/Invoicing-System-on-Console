@@ -2,7 +2,7 @@ package shopInfo;
 import java.util.Date;
 import java.util.List;
 
-public class Invoice {
+public class Invoice  implements InvoiceBhaviores{
     public String customerFullName;
     public String phoneNumber;
     public Date invoiceDate;
@@ -56,6 +56,7 @@ public class Invoice {
         this.items = items;
     }
 
+    @Override
     public double getTotalAmount() {
         return totalAmount;
     }

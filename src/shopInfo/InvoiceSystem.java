@@ -211,10 +211,11 @@ public class InvoiceSystem {
 
             boolean found = false;
             for (Invoice invoice : invoices) {
-                if (invoice.getCustomerFullName().toLowerCase().contains(searchTerm)) {
-                    System.out.println(invoice);
-                    found = true;
+                if (!invoice.getCustomerFullName().contains(searchTerm)) {
+                    continue;
                 }
+                System.out.println(invoice);
+                found = true;
             }
             if (!found) {
                 System.out.println("No invoices found for the provided customer name.");

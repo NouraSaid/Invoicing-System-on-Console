@@ -1,6 +1,6 @@
 package shopInfo;
 
-public class Product {
+public class Product implements ProductBhaviorse{
     public String itemId;
     public String itemName;
     public double unitPrice;
@@ -15,6 +15,8 @@ public class Product {
 
     // Getters and setters
 
+
+    @Override
     public String getItemId() {
         return itemId;
     }
@@ -31,7 +33,8 @@ public class Product {
         this.itemName = itemName;
     }
 
-    public double getUnitPrice() {
+   @Override
+   public double getUnitPrice() {
         return unitPrice;
     }
 

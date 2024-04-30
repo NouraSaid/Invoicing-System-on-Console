@@ -1,9 +1,9 @@
 package shopInfo;
 
 public interface ShopBhaviorse {
-    void loadShopData();
-    void setShopName(String newName);
-    void setInvoiceHeader(String header);
+    void loadData();
+    void setShopName();
+    void setInvoiceHeader();
 
     void  addItems();
     void deleteItems();

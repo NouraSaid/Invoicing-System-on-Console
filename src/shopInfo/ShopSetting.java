@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ShopSetting {
+public class ShopSetting implements ShopBhaviorse{
     private String shopName;
     private Map<String, String> invoiceHeader;
     private Scanner scanner;
@@ -14,6 +14,7 @@ public class ShopSetting {
         this.scanner = new Scanner(System.in);
     }
 
+    @Override
     public void setInvoiceHeader() {
         System.out.println("Set Invoice Header:");
         System.out.print("Enter telephone number: ");
@@ -35,6 +36,8 @@ public class ShopSetting {
     public Map<String, String> getInvoiceHeader() {
         return invoiceHeader;
     }
+
+    @Override
 
     public void loadData() {
         System.out.println("Loading initial data...");
@@ -58,6 +61,13 @@ public class ShopSetting {
         System.out.println("Initial data loaded successfully.");
     }
 
+    @Override
+    public void setShopName() {
+
+    }
+
+
+    @Override
     public void addItems()
     {
         System.out.println("Add Items:");
@@ -84,7 +94,9 @@ public class ShopSetting {
     }
 
 
-    public void deleteItems() {
+
+   @Override
+   public void deleteItems() {
     System.out.println("Delete Items:");
 
     System.out.print("Enter Item ID or Name to delete: ");
@@ -104,6 +116,7 @@ public class ShopSetting {
         System.out.println("Item not found.");
     }
 }
+    @Override
     public void changePrice() {
         System.out.println("Change Item Price:");
 
@@ -127,6 +140,7 @@ public class ShopSetting {
         }
     }
 
+    @Override
     public void reportItems() {
         System.out.println("Report All Items:");
 
