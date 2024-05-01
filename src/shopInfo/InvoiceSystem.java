@@ -8,6 +8,8 @@ public class InvoiceSystem {
     public static List<Invoice> invoices = new ArrayList<>();
     public static List<Product> products = new ArrayList<>();
     static ShopSetting shop=new ShopSetting("new shop");
+    private static int[] menuOptionCounters = new int[8];
+
     private static Scanner scanner;
     private String invoiceHeader;
 
@@ -18,6 +20,8 @@ public class InvoiceSystem {
         while (!exit) {
             Menu.show();
             int choice = Menu.getNumericOption(scanner);
+
+            menuOptionCounters[choice - 1]++;
 
 
             switch (choice) {
@@ -116,6 +120,7 @@ public class InvoiceSystem {
             }
         }
     }
+
 
     //*********** Main Menu Functions ******************
 
@@ -225,25 +230,10 @@ public class InvoiceSystem {
 
 
         private static void handleProgramStatistics() {
-            // Calculate and display program statistics
-
-            // Example statistics to calculate:
-            // 1. Total number of invoices
-            int totalInvoices = invoices.size();
-            System.out.println("Total number of invoices: " + totalInvoices);
-
-            // 2. Total amount of sales
-            double totalSales = 0.0;
-            for (Invoice invoice : invoices) {
-                totalSales += invoice.getTotalAmount();
+            {
+                System.out.println("Program Statistics:");
+                for (int i = 0; i < menuOptionCounters.length; i++) {
+                    System.out.println("Menu Option " + (i + 1) + ": " + menuOptionCounters[i] + " times");
+                }
             }
-            System.out.println("Total amount of sales: " + totalSales);
-
-            // 3. Average amount per invoice
-            double averageAmountPerInvoice = totalSales / totalInvoices;
-            System.out.println("Average amount per invoice: " + averageAmountPerInvoice);
-
-            // 4. Other statistics as needed...
-
-        }
-    }
+    }}
